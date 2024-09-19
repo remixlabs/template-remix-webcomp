@@ -11,8 +11,10 @@ export declare class DevTest extends LitElement {
      * The number of times the button has been clicked.
      */
     count: number;
+    incrementByNumber: number;
     render(): import("lit-html").TemplateResult<1>;
     reset(): void;
+    incrementBy(): void;
     private _onClick;
     private _emitCount;
     private _justTrigger;

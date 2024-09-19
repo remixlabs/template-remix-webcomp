@@ -18,6 +18,12 @@ export class DevTest extends LitElement {
     @property({ type: Number })
     count = 0;
 
+    /**
+     * The number to increment by used with the `incrementBy` event
+     */
+    @property({type:Number})
+    incrementByNumber = 1;
+
     render() {
         return html`
             <div class="container">
@@ -50,6 +56,13 @@ export class DevTest extends LitElement {
     // this can be invoked from outside
     reset() {
         this.count = 0;
+    }
+
+    // this can be invoked from outside
+    // increments count by the value of incrementByNumber
+    incrementBy() {
+        this.count = this.count + this.incrementByNumber;
+        this._emitCount(); // make sure to emit the count after update
     }
 
     private _onClick() {

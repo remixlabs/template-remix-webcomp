@@ -19,6 +19,14 @@
     {
       "name": "reset",
       "type": "event"
+    },
+    {
+      "name": "incrementBy",
+      "type": "event"
+    },
+    {
+      "name": "incrementByNumber",
+      "type": "number"
     }
   ],
   "events": [
