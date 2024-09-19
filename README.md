@@ -67,6 +67,7 @@ Each manifest has the following fields:
 * **file** *(string, required)*: the file name
 * **ins** *(array, optional)*: the set of input params to customise the web component (see section `ins` below)
 * **events** *(array, optional)*: the set of events fired by the web component (see section `events` below)
+* **slots** *(object, optional)*: the definition for use of slots in the web component (see section `slots` below)
 
 ## Field: Ins
 
@@ -110,6 +111,17 @@ This will create 5 out bindings:
 * `center-changed`: a trigger
 * `center-changed - payload`: an object
 * `click`: a trigger
+
+## Field: Slots
+An object defining the use of slots in the web component.
+
+Valid values are:
+* `{ type: "NoSlots"}`: no slots
+* `{ type: "SingleSlot", param: true }`: a single slot that takes a list of cards
+* `{ type: "SingleSlot", param: false }`: a single slot that takes a single card
+
+Not yet implemented:
+* `{ type: "MultiSlot", param: [names] }`
 
 ## Field Type
 - `"string"`
