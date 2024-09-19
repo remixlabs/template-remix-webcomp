@@ -1,0 +1,32 @@
+{
+  "name": "dev-test",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "main": "dist/dev-test.es.js",
+  "exports": {
+    ".": "./dist/dev-test.es.js"
+  },
+  "types": "types/dev-test.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "bundle": "npm run build && node bundle.js"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "lit": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2"
+  },
+  "prettier": {
+    "tabWidth": 4
+  }
+}

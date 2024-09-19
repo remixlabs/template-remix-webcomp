@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link rel="stylesheet" href="/harness.css" />
+    <script type="module" src="/src/dev-test.ts"></script>
+</head>
+<body>
+<dev-test title="test title">
+    <h2>This is the Slot element</h2>
+</dev-test>
+
+<div class="controls">
+    <button id="reset">Reset</button>
+    <div id="count"></div>
+</div>
+</body>
+
+<script>
+    const wc = document.querySelector("dev-test");
+    const resetBtn = document.querySelector("#reset");
+    const countDiv = document.querySelector("#count");
+    wc.addEventListener(
+        "current-count",
+        (evt) => (countDiv.innerHTML = evt.detail)
+    );
+    wc.addEventListener("just-trigger", (evt) =>
+        console.log("'just-trigger' fired")
+    );
+    resetBtn.addEventListener("click", () => wc.reset());
+</script>
+</html>
